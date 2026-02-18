@@ -1,0 +1,88 @@
+import requests
+import hashlib
+import xml.etree.ElementTree as ET
+
+
+# === Paynow credentials ===
+INTEGRATION_ID_USD = "23113"
+INTEGRATION_KEY_USD = "50c239c8-4628-4d47-a069-7b32810c1661"
+
+INTEGRATION_ID = "23112"
+INTEGRATION_KEY = "206e3fe2-0121-457c-8904-e2f80aa99faa"
+
+# === Callback URLs ===
+RESULT_URL = "http://example.com/gateways/paynow/update"
+RETURN_URL = "http://example.com/return?gateway=paynow&merchantReference=1234"
+
+# === Paynow endpoint ===
+PAYNOW_URL = "https://www.paynow.co.zw/interface/remotetransaction"
+
+
+def generate_hash(data_dict, integration_key):
+    """Generate SHA512 hash in field order (not sorted)."""
+    hash_string = ""
+    for key in data_dict:
+        if key.lower() != "hash":  # skip the hash itself
+            value = str(data_dict[key]).strip()
+            if value != "":
+                hash_string += value
+    hash_string += integration_key
+    return hashlib.sha512(hash_string.encode("utf-8")).hexdigest().upper()
+
+
+def send_mobile_payment(reference, email, amount, phone, method="ecocash"):
+    """Send mobile money payment request to Paynow."""
+    # Maintain field order (important!)
+    data = {
+        "id": INTEGRATION_ID,
+        "reference": reference,
+        "amount": amount,
+        "additionalinfo": "Test Item",
+        "returnurl": RETURN_URL,
+        "resulturl": RESULT_URL,
+        "authemail": email,
+        "phone": phone,
+        "method": method,
+        "status": "Message",  # must be included before hashing
+    }
+
+    # Generate valid hash in the same order
+    data["hash"] = generate_hash(data, INTEGRATION_KEY)
+
+    print("🔹 Sending payment request to Paynow...")
+    response = requests.post(PAYNOW_URL, data=data)
+    print("🔹 HTTP Status:", response.status_code)
+
+    if response.status_code != 200:
+        print("❌ HTTP Error:", response.text)
+        return
+
+    text = response.text.strip()
+    if not text.startswith("<"):
+        print("❌ Non-XML Response:")
+        print(text)
+        return
+
+    root = ET.fromstring(text)
+    status = root.findtext("status")
+    poll_url = root.findtext("pollurl")
+    error = root.findtext("error")
+    instructions = root.findtext("instructions")
+
+    if status and status.lower() == "ok":
+        print("✅ Integration works!")
+        print("Poll URL:", poll_url)
+        print("Instructions:", instructions)
+    else:
+        print("❌ Paynow returned an error:", error or status)
+
+
+# === Example test ===
+if __name__ == "__main__":
+    send_mobile_payment(
+        reference="Test Invoice",
+        email="alistairpatsanza4@gmail.com",
+        amount=1.00,
+        phone="0785076944",
+        method="ecocash",
+    )

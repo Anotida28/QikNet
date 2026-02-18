@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0B2B5A" />
+  <title>QikNet WiFi Hotspot | Buy Voucher (EcoCash)</title>
+  <meta name="description" content="Buy QikNet WiFi vouchers in Zimbabwe via EcoCash. $0.20 1hr, $0.50 day, $1 bi-daily, $3 weekly. Get voucher + expiry instantly." />
+
+  <style>
+    :root{
+      --bg: #0b1d36;
+      --text: #eaf2ff;
+      --muted: rgba(234,242,255,.75);
+      --brand1: #0b2b5a;
+      --brand2: #00b3d6;
+      --brand3: #ffcc33;
+      --ok: #27d07d;
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1120px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 600px at 15% 10%, rgba(0,179,214,.25), transparent 60%),
+        radial-gradient(900px 520px at 85% 15%, rgba(255,204,51,.18), transparent 55%),
+        radial-gradient(850px 520px at 65% 90%, rgba(39,208,125,.14), transparent 60%),
+        linear-gradient(180deg, #07162c 0%, #061225 45%, #050e1c 100%);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(180deg, rgba(5,14,28,.92) 0%, rgba(5,14,28,.72) 100%);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; min-width:220px;
+    }
+    .logo{
+      width:44px; height:44px; border-radius:14px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(0,179,214,.9), rgba(11,43,90,.95) 55%, rgba(2,10,20,1) 100%);
+      display:grid; place-items:center;
+      box-shadow: 0 12px 30px rgba(0,179,214,.15);
+      position:relative;
+      overflow:hidden;
+    }
+    .logo:before{
+      content:"";
+      position:absolute; inset:-20%;
+      background: conic-gradient(from 180deg, rgba(255,204,51,.0), rgba(255,204,51,.45), rgba(0,179,214,.0));
+      transform: rotate(10deg);
+      opacity:.55;
+    }
+    .bolt{
+      width:18px; height:28px; position:relative; z-index:2;
+      clip-path: polygon(45% 0%, 100% 0%, 58% 46%, 86% 46%, 20% 100%, 46% 56%, 18% 56%);
+      background: linear-gradient(180deg, #ffe079 0%, #ffcc33 40%, #ffb700 100%);
+      filter: drop-shadow(0 8px 12px rgba(0,0,0,.25));
+    }
+    .brand h1{font-size:16px; line-height:1.15; margin:0; letter-spacing:.2px;}
+    .brand p{margin:2px 0 0; font-size:12px; color:var(--muted)}
+    .nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; align-items:center;}
+    .chip{
+      padding:10px 12px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      border-radius: 999px;
+      font-size:13px;
+      color: rgba(234,242,255,.9);
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      user-select:none;
+    }
+    .chip:hover{transform: translateY(-1px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.18)}
+    .chip.primary{
+      border-color: rgba(0,179,214,.45);
+      background: linear-gradient(135deg, rgba(0,179,214,.22), rgba(255,204,51,.12));
+    }
+
+    .hero{padding:38px 0 18px;}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){ .hero-grid{grid-template-columns:1fr; gap:14px} .brand{min-width:auto} }
+
+    .panel{
+      border:1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .panel-inner{padding:22px}
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:10px;
+      font-size:12px; letter-spacing:.18em; text-transform:uppercase;
+      color: rgba(234,242,255,.78);
+    }
+    .dot{
+      width:8px; height:8px; border-radius:999px;
+      background: radial-gradient(circle at 30% 30%, var(--brand3), rgba(255,204,51,.25));
+      box-shadow:0 0 0 6px rgba(255,204,51,.10);
+    }
+    .headline{
+      margin:12px 0 10px;
+      font-size:44px;
+      line-height:1.02;
+      letter-spacing:-.02em;
+    }
+    @media (max-width: 520px){ .headline{font-size:34px} }
+    .sub{
+      margin:0;
+      color: rgba(234,242,255,.82);
+      font-size:16px;
+      line-height:1.5;
+      max-width: 60ch;
+    }
+
+    .cta-row{margin-top:18px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
+    .btn{
+      border:0;
+      padding:12px 14px;
+      border-radius: 14px;
+      font-weight:800;
+      font-size:14px;
+      cursor:pointer;
+      transition: transform .15s ease, background .15s ease, opacity .15s ease;
+      display:inline-flex; gap:10px; align-items:center; justify-content:center;
+      user-select:none; white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .btn:active{transform: translateY(0)}
+    .btn.primary{
+      color:#08203f;
+      background: linear-gradient(135deg, var(--brand3), #ffe08a);
+      box-shadow: 0 16px 32px rgba(255,204,51,.20);
+    }
+    .btn.ghost{
+      color: rgba(234,242,255,.92);
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+    .btn:disabled{opacity:.55; cursor:not-allowed; transform:none}
+
+    .quick{
+      background:
+        radial-gradient(620px 420px at 20% 10%, rgba(0,179,214,.25), transparent 50%),
+        linear-gradient(180deg, rgba(11,43,90,.45), rgba(255,255,255,.05));
+    }
+    .quick-title{display:flex; align-items:flex-start; justify-content:space-between; gap:12px; margin-bottom:10px;}
+    .quick-title h2{margin:0; font-size:18px; letter-spacing:-.01em;}
+    .pill{
+      font-size:12px;
+      padding:8px 10px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: rgba(234,242,255,.80);
+      white-space:nowrap;
+    }
+    .pill-btn{
+      cursor:pointer;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: rgba(234,242,255,.8);
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+    }
+    .pill-btn:hover{transform: translateY(-1px)}
+    .pill-btn.active{
+      border-color: rgba(0,179,214,.6);
+      background: rgba(0,179,214,.14);
+      color: rgba(234,242,255,.95);
+    }
+    .currency-row{
+      margin-top: 10px;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .currency-label{
+      font-size: 12px;
+      color: rgba(234,242,255,.75);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .currency-toggle{
+      display:flex;
+      gap:8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+
+    .price{margin-top:6px; display:grid; gap:10px;}
+    .plan{
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      border-radius: 18px;
+      padding:14px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      cursor:pointer;
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+    }
+    .plan:hover{transform: translateY(-1px); background: rgba(255,255,255,.08)}
+    .plan.active{border-color: rgba(255,204,51,.60); background: rgba(255,204,51,.08)}
+    .plan strong{font-size:15px}
+    .plan small{display:block; color: rgba(234,242,255,.70); margin-top:3px}
+    .tag{
+      padding:10px 12px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(0,179,214,.22), rgba(255,204,51,.14));
+      border:1px solid rgba(0,179,214,.40);
+      font-weight:900;
+      color: rgba(255,255,255,.94);
+      white-space:nowrap;
+      text-align:right;
+      min-width: 120px;
+    }
+    .tag span{display:block; font-size:11px; font-weight:700; color: rgba(234,242,255,.80)}
+
+    .field{
+      margin-top:12px;
+      display:grid;
+      gap:8px;
+    }
+    .label{font-size:12px; color: rgba(234,242,255,.78)}
+    .input{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+      color:#fff;
+      outline:none;
+      font-size:14px;
+    }
+    .help{font-size:12px; color: rgba(234,242,255,.68); line-height:1.35}
+    .status{
+      margin-top:12px;
+      padding:12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      font-size:13px;
+      color: rgba(234,242,255,.86);
+      display:none;
+    }
+    .status.show{display:block}
+    .status b{color:#fff}
+    .code{
+      margin-top:10px;
+      padding:12px;
+      border-radius:14px;
+      border:1px solid rgba(39,208,125,.35);
+      background: rgba(39,208,125,.10);
+      display:none;
+    }
+    .code.show{display:block}
+    .voucher{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size:20px;
+      letter-spacing:2px;
+      font-weight:900;
+      text-align:center;
+      margin:8px 0 2px;
+      color:#fff;
+    }
+    .expire{font-size:12px; color: rgba(234,242,255,.85); text-align:center;}
+    .screenshot{font-size:12px; color: rgba(234,242,255,.75); text-align:center; margin-top:8px}
+
+    footer{
+      padding:28px 0 34px;
+      border-top:1px solid rgba(255,255,255,.08);
+      color: rgba(234,242,255,.70);
+      font-size:12px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"><div class="bolt"></div></div>
+          <div>
+            <h1>QikNet WiFi Hotspot</h1>
+            <p>Buy vouchers instantly via EcoCash</p>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <a class="chip" href="#buy">Buy</a>
+          <a class="chip" href="#how">How it works</a>
+          <a class="chip primary" href="https://qiknet.co.zw" target="_blank" rel="noopener">qiknet.co.zw</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="hero" id="buy">
+      <div class="hero-grid">
+        <div class="panel">
+          <div class="panel-inner">
+            <div class="eyebrow"><span class="dot"></span> ECOCASH PROMPT • FAST VOUCHERS</div>
+            <h2 class="headline">Buy a WiFi Voucher<br/>in 30 seconds</h2>
+            <p class="sub">
+              Choose a package, enter your EcoCash number, and confirm the payment prompt on your phone.
+              After payment, you'll see your voucher code and exact expiry time — screenshot it.
+            </p>
+
+            <div class="cta-row">
+              <button class="btn primary" type="button" onclick="scrollToBuy()">Buy Now</button>
+              <a class="btn ghost" href="https://wa.me/263780250548" target="_blank" rel="noopener">Need help? WhatsApp</a>
+            </div>
+          </div>
+        </div>
+
+        <aside class="panel quick" aria-label="Purchase panel">
+          <div class="panel-inner">
+            <div class="quick-title">
+              <h2>Select a package</h2>
+              <span class="pill">Pay with EcoCash</span>
+            
+            </div>
+
+            <div class="currency-row" aria-label="Currency selector">
+              <span class="currency-label">Currency</span>
+              <div class="currency-toggle">
+                <button class="pill pill-btn active" type="button" data-currency="USD">USD</button>
+                <button class="pill pill-btn" type="button" data-currency="ZIG">ZIG</button>
+              </div>
+            </div>
+
+            <div class="price" id="plans">
+              <div class="plan active" data-plan="1hr" data-amount-usd="0.20" data-amount-zig="0.20" data-amount="0.20" data-mins="60">
+                <div>
+                  <strong>1 Hour</strong>
+                  <small>Good for quick browsing</small>
+                </div>
+                <div class="tag">$0.20<span>EcoCash</span></div>
+              </div>
+
+              <div class="plan" data-plan="1day" data-amount-usd="0.50" data-amount-zig="0.50" data-amount="0.50" data-mins="1440">
+                <div>
+                  <strong>1 Day</strong>
+                  <small>Unlimited for the day</small>
+                </div>
+                <div class="tag">$0.50<span>EcoCash</span></div>
+              </div>
+
+              <div class="plan" data-plan="48hr" data-amount-usd="1.00" data-amount-zig="1.00" data-amount="1.00" data-mins="2880">
+                <div>
+                  <strong>Bi-Daily</strong>
+                  <small>48 hours access</small>
+                </div>
+                <div class="tag">$1.00<span>EcoCash</span></div>
+              </div>
+
+              <div class="plan" data-plan="7day" data-amount-usd="3.00" data-amount-zig="3.00" data-amount="3.00" data-mins="10080">
+                <div>
+                  <strong>Weekly</strong>
+                  <small>7 days access</small>
+                </div>
+                <div class="tag">$3.00<span>EcoCash</span></div>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="label">EcoCash Number</div>
+              <input class="input" id="phone" placeholder="e.g. 0785076944" inputmode="numeric" />
+              <div class="help">
+                You will receive an <b>EcoCash prompt</b> on this number. Please confirm to complete your purchase.
+              </div>
+            </div>
+
+            <div class="cta-row" style="margin-top:14px">
+              <button class="btn primary" id="payBtn" type="button" onclick="startPayment()">Pay with EcoCash</button>
+              <button class="btn ghost" type="button" onclick="copyWifi()">Copy WiFi Names</button>
+            </div>
+
+            <div class="status" id="statusBox"></div>
+
+            <div class="code" id="voucherBox">
+              <div class="help" style="text-align:center">Your Voucher Code</div>
+              <div class="voucher" id="voucherCode">—</div>
+              <div class="expire" id="expiryText">—</div>
+              <div class="screenshot"><b>Please screenshot this page</b></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <section id="how" style="padding:18px 0 26px">
+      <div class="panel">
+        <div class="panel-inner">
+          <div class="eyebrow"><span class="dot"></span> HOW IT WORKS</div>
+          <p class="sub" style="margin-top:10px">
+            <b>1)</b> Select a package & enter your EcoCash number.<br/>
+            <b>2)</b> Confirm the EcoCash prompt on your phone.<br/>
+            <b>3)</b> Your voucher code appears here with the exact expiry time — screenshot it.<br/>
+            <span style="opacity:.85">If you need help, WhatsApp +263 780 250 548.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap">
+        <div>© <span id="year"></span> QikNet WiFi Hotspot • Zimbabwe</div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <span class="chip">Support: +263780250548</span>
+          <span class="chip">Support: +263778992491</span>
+          <span class="chip">Support: +263785076944</span>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+<script>
+  // ========= CONFIG =========
+  const API_BASE = ""; // Same-origin, leave empty for production
+  const POLL_INTERVAL = 3000; // Poll every 3 seconds
+  const MAX_POLL_ATTEMPTS = 60; // Max 3 minutes of polling
+
+  const WIFI_NAMES = "QikNet-1\nQikNet-2\nQikNet-3";
+
+  // ========= UI =========
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  let selectedPlan = document.querySelector(".plan.active");
+  let selectedCurrency = "USD";
+  let currentPollInterval = null;
+
+  function formatMoney(currency, amount){
+    const n = Number(amount);
+    if (!isFinite(n)) return amount;
+    if (currency === "USD"){
+      return "$" + n.toFixed(2);
+    }
+    return "ZIG " + (Number.isInteger(n) ? String(n) : String(n));
+  }
+
+  function applyCurrency(){
+    document.querySelectorAll(".plan").forEach(p => {
+      const usd = p.dataset.amountUsd || p.dataset.amount;
+      const zig = p.dataset.amountZig || p.dataset.amount;
+      const amt = (selectedCurrency === "ZIG") ? zig : usd;
+      p.dataset.amount = amt;
+
+      const tag = p.querySelector(".tag");
+      if(tag){
+        const span = tag.querySelector("span");
+        tag.innerHTML = formatMoney(selectedCurrency, amt) + (span ? span.outerHTML : "<span>EcoCash</span>");
+      }
+    });
+  }
+
+  // Currency toggle buttons
+  document.querySelectorAll(".pill-btn[data-currency]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".pill-btn[data-currency]").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      selectedCurrency = btn.dataset.currency;
+      applyCurrency();
+    });
+  });
+
+  applyCurrency();
+
+  document.querySelectorAll(".plan").forEach(p => {
+    p.addEventListener("click", () => {
+      document.querySelectorAll(".plan").forEach(x => x.classList.remove("active"));
+      p.classList.add("active");
+      selectedPlan = p;
+    });
+  });
+
+  function scrollToBuy(){
+    document.getElementById("phone").focus({preventScroll:false});
+  }
+
+  async function copyWifi(){
+    try{
+      await navigator.clipboard.writeText(WIFI_NAMES);
+      toast("WiFi names copied");
+    }catch(e){
+      alert("Copy failed. Please copy manually:\n\n" + WIFI_NAMES);
+    }
+  }
+
+  function setStatus(msg){
+    const box = document.getElementById("statusBox");
+    box.innerHTML = msg;
+    box.classList.add("show");
+  }
+
+  function showVoucher(voucher, expiry){
+    document.getElementById("voucherCode").textContent = voucher;
+    document.getElementById("expiryText").textContent = "Expires: " + expiry;
+    document.getElementById("voucherBox").classList.add("show");
+  }
+
+  function toast(msg){
+    setStatus(msg);
+  }
+
+  function stopPolling(){
+    if(currentPollInterval){
+      clearInterval(currentPollInterval);
+      currentPollInterval = null;
+    }
+  }
+
+  async function pollPaymentStatus(reference, attempts = 0){
+    if(attempts >= MAX_POLL_ATTEMPTS){
+      stopPolling();
+      setStatus("⏱️ Timeout waiting for payment. If you paid, please contact support with reference: <b>" + reference + "</b>");
+      document.getElementById("payBtn").disabled = false;
+      return;
+    }
+
+    try {
+      const r = await fetch(API_BASE + "/payments/" + encodeURIComponent(reference));
+      const data = await r.json();
+
+      if(!data.success){
+        throw new Error(data.error || "Failed to check status");
+      }
+
+      if(data.status === "PAID"){
+        stopPolling();
+        showVoucher(data.voucher, data.expiry);
+        setStatus("✅ Payment confirmed! Screenshot your voucher below.");
+        document.getElementById("payBtn").disabled = false;
+      } else if(data.status === "FAILED" || data.status === "EXPIRED" || data.status === "CANCELLED"){
+        stopPolling();
+        setStatus("❌ Payment " + data.status.toLowerCase() + ". Please try again.");
+        document.getElementById("payBtn").disabled = false;
+      }
+      // If still PENDING, continue polling (handled by interval)
+    } catch(err){
+      console.error("Poll error:", err);
+      // Continue polling on transient errors
+    }
+  }
+
+  async function startPayment(){
+    const phone = document.getElementById("phone").value.trim();
+    if(!phone || phone.length < 9){
+      alert("Please enter a valid EcoCash number (e.g. 0785076944).");
+      return;
+    }
+
+    // Stop any existing polling
+    stopPolling();
+
+    const payBtn = document.getElementById("payBtn");
+    payBtn.disabled = true;
+
+    // Hide previous voucher
+    document.getElementById("voucherBox").classList.remove("show");
+
+    const plan = selectedPlan.dataset.plan;
+
+    setStatus("✅ Requesting EcoCash prompt…<br><span style='opacity:.8'>Confirm the prompt on <b>" + phone + "</b>.</span>");
+
+    try{
+      const r = await fetch(API_BASE + "/pay", {
+        method: "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({ 
+          phone, 
+          plan, 
+          currency: selectedCurrency, 
+          method: "ecocash" 
+        })
+      });
+
+      const data = await r.json();
+
+      if(!data.success){
+        throw new Error(data.error || "Payment request failed");
+      }
+
+      const reference = data.reference;
+      setStatus("📲 Prompt sent! Reference: <b>" + reference + "</b><br><span style='opacity:.8'>Please confirm on EcoCash…</span>");
+
+      // Start polling for payment status
+      let pollAttempts = 0;
+      currentPollInterval = setInterval(() => {
+        pollPaymentStatus(reference, pollAttempts++);
+      }, POLL_INTERVAL);
+
+      // Also poll immediately after a short delay
+      setTimeout(() => pollPaymentStatus(reference, 0), 1500);
+
+    }catch(err){
+      alert(err.message || "Something went wrong.");
+      setStatus("❌ Failed to send EcoCash prompt. Please try again or WhatsApp support.");
+      payBtn.disabled = false;
+    }
+  }
+</script>
+</body>
+</html>

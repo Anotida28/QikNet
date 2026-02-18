@@ -1,0 +1,83 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+  EXPIRED
+  CANCELLED
+}
+
+enum VoucherStatus {
+  ACTIVE
+  USED
+  EXPIRED
+  REVOKED
+}
+
+enum SessionStatus {
+  ACTIVE
+  ENDED
+  EXPIRED
+}
+
+model Payment {
+  id          String        @id @default(cuid())
+  reference   String        @unique
+  phone       String
+  plan        String
+  currency    String
+  amount      Decimal       @db.Decimal(10, 2)
+  status      PaymentStatus @default(PENDING)
+  pollUrl     String?       @db.Text
+  providerRef String?
+  
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  
+  voucher     Voucher?
+  
+  @@index([phone])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model Voucher {
+  id        String        @id @default(cuid())
+  code      String        @unique
+  plan      String
+  issuedAt  DateTime      @default(now())
+  expiresAt DateTime
+  status    VoucherStatus @default(ACTIVE)
+  
+  paymentId String        @unique
+  payment   Payment       @relation(fields: [paymentId], references: [id])
+  
+  sessions  Session[]
+  
+  @@index([code])
+  @@index([status])
+  @@index([expiresAt])
+}
+
+model Session {
+  id        String        @id @default(cuid())
+  macAddress String
+  startedAt DateTime      @default(now())
+  endsAt    DateTime
+  status    SessionStatus @default(ACTIVE)
+  
+  voucherId String
+  voucher   Voucher       @relation(fields: [voucherId], references: [id])
+  
+  @@index([macAddress])
+  @@index([status])
+  @@index([voucherId])
+}

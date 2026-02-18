@@ -1,0 +1,93 @@
+Conversation opened. 1 read message.
+
+Skip to content
+Using Gmail with screen readers
+qiknet 
+2 of 2
+ZISPA auto confirmation: add domain qiknet.co.zw
+Inbox
+
+ZISPA Registration Confirmation <admin@zispa.org.zw>
+Sat, Jan 17, 11:55 AM
+to me, accounts, billing, dns-admin, dns
+
+This confirmation is being sent from ZISPA (the Zimbabwe Internet Service Providers Association) who manage the .co.zw domain name registry for all .co.zw domain names.
+
+Domain owners should check the ownership and nameserver details below, but are asked to DEAL DIRECTLY WITH THEIR REGISTRAR, AND NOT WITH ZISPA, about any issues with their domain now that it has been delegated to the specified nameservers.
+
+The registrar for this domain is webdev whose email address is dns@webdev.co.zw accounts@webdev.co.zw. Their contact details are appended below.
+
+NOTE: Consultants etc must list their client's details here, not their own, although they may append their email address to that of the owner. Provision of false owner information can be grounds for cancellation of a domain name's registration.
+
+The template for the domain name qiknet.co.zw has been processed today with action = add.
+
+The registration and expiry dates are 17 Jan 2026 and 17 Jan 2027 respectively.
+
+WARNING: There are possible problems with the DNS records on your nameservers which we recommend you investigate. See WARNING(s) or ERROR(s) listed below.
+
+Check that the following ownership details are correct and contact your registrar if there are any errors:
+
+DOMAIN OWNER
+  Owner                 = Alistair Patsanza
+  Organisation name     = Qiknet Digital Solutions
+  Physical Address      = 11a Cambridge Road, Avondale
+  Postal Address        = 11a Cambridge Road, Avondale
+  Town/City             = Harare
+  Country               = Zimbabwe
+  Voice Phone           = +263785076944
+  Fax Number            =
+  E-mail Address        = alistairpatsanza@gmail.com
+DESCRIPTION OF ORG/DOMAIN
+  Description           = ICT Services Including AI, Robotic, Software Development & Trainings
+  Proposed domain usage = website/email
+DOMICILIUM CITANDI
+  Domicilium citandi    = 11a Cambridge Road, Avondale
+REGISTRAR
+  ZISPA Handle          = webdev
+REGISTRATION HISTORY
+Sat Jan 17 11:52:55 2026: add by webdev: qiknet.co.zw
+
+NOTE: Registrants must understand the importance of the contact email address listed above. It will be used to notify the domain owner of any issues
+with their domain. This is particularly important if there is a problem with the domain because the lack of response to notifications can lead to
+the deletion of the domain. The use of an email that uses this registered domain will mean that notices will be undeliverable if the domain itself
+has a technical problem. Best practice is therefore to use an email address in another domain. Also, use generic email addresses and not those of a
+staff member who may leave the organisation at some stage. Finally: It is essential to make sure the email address is kept updated.
+
+Check that the following NS records registered on the ZISPA nameserver for qiknet.co.zw are correct and notify the registrar of any issues:
+qiknet.co.zw. 28800 IN NS cory.ns.cloudflare.com.
+qiknet.co.zw. 28800 IN NS perla.ns.cloudflare.com.
+
+Checking whether the above nameservers are authoritative for qiknet.co.zw:
+cory.ns.cloudflare.com: Authoritative - SOA S/N 2394114644
+perla.ns.cloudflare.com: Authoritative - SOA S/N 2394114644
+
+GOOD: All nameservers are authoritative and all serial numbers match.
+
+Querying authoritative nameserver cory.ns.cloudflare.com for A, MX, NS and SOA records:
+qiknet.co.zw. WARNING: No A records found (normally required for a website - see check for www.qiknet.co.zw below)
+qiknet.co.zw. WARNING: No MX records found (email to the domain will not be deliverable)
+qiknet.co.zw. 86400 IN NS cory.ns.cloudflare.com.
+qiknet.co.zw. 86400 IN NS perla.ns.cloudflare.com.
+qiknet.co.zw. 1800 IN SOA cory.ns.cloudflare.com. dns.cloudflare.com. 2394114644 10000 2400 604800 1800
+
+GOOD: Nameservers listed at cory.ns.cloudflare.com match those being queried.
+
+NOTE: No A or CNAME record found for website www.qiknet.co.zw.
+
+NOTE: All registrations are subject to ZISPA's Terms and Conditions, found at http://zispa.org.zw/terms_and_conditions.html, which may be updated from time to time.
+
+For further information, see our website: www.zispa.org.zw
+
+The registrar's contact details are:
+
+    ZISPA Handle = webdev
+    Contact name = DNS Admin
+    Organisation name = Webdev (Pvt) Ltd
+    Physical Address = 207 Josiah Tongogara/9th Street
+    Postal Address = 207 Josiah Tongogara/9th Street
+    Town/City = Harare
+    Country = Zimbabwe
+    Voice Phone = 702906
+    Fax Number =
+    E-mail Address = dns-admin@webdevworld.com
+    Alt email addresses = dns@webdev.co.zw accounts@webdev.co.zw
